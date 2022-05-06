@@ -65,7 +65,7 @@ const information1 = {
     occupation: "Software Engineer",
     interest: {  outdoor: [  { "hiking": ["Mt. Kenya", "Mt. Everest", "Menengai Crater"] } ]  }
 }
-    document.getElementById("quiz3").innerHTML=information1.interest.outdoor
+    document.getElementById("quiz3").innerHTML=information1.occupation;
 
 
 // expected output: 'Menengai Crater'
@@ -102,7 +102,6 @@ for (i=0;i < string1.length && i < string2.length; i ++)
 
 
     
-
 // TODO: write your code above this line
 
 // The lines of code below will be used for testing your function. don't change them
@@ -142,35 +141,27 @@ console.log(palindromeFunc("nurse run")); // expected output: false
 function getGrade(score) {
     let grade;
     // Write your code here
-    
+    let marks=document.getElementById('marks');
+
+    if ( score >= 0 && score <= 5 ) {
+        grade = 'F';
+    } else if ( score > 5 && score <= 10 ) {
+        grade = 'E';
+    } else if ( score > 10 && score <= 15 ) {
+        grade = 'D';
+    } else if ( score > 15 && score <= 20 ) {
+        grade = 'C';
+    } else if ( score > 20 && score <= 25 ) {
+        grade = 'B';
+    } else if ( score > 25 && score <= 30 ) {
+        grade = 'A';
+    }
     return grade;
+  
 }
+
 // TODO: write your code above this line
-function getGrade() {
-let grade=['A','B','C','D','E','F'];
-   let score=document.getElementById("score");
-   if (score>25 && score<=30) {
-       document.getElementById("quiz6").innerHTML=grade[0];
-   }else if (score>20 && score<=25) {
-       document.getElementById("quiz6").innerHTML =grade[1];
-   } else if (score >15 && score<=20) {
-    document.getElementById("quiz6").innerHTML =grade[2];
-   } else if (score>10 && score <= 15) {
-    document.getElementById("quiz6").innerHTML =grade[3];
-  
-   } else if (score>5 && score<=10) {
-    document.getElementById("quiz6").innerHTML =grade[4];
 
-   } else if (score<=5) {
-    document.getElementById("quiz6").innerHTML =grade[5];
-
-   } else {
-    document.getElementById("quiz6").innerHTML ="invalid input";
-  
-   } 
-       
-   }
-}
 // The line of code below will be used for testing your function. don't change it
 //console.log(getGrade(25)); // expected output: B 
 
@@ -186,7 +177,23 @@ let grade=['A','B','C','D','E','F'];
 
 // TODO: write your code below this line
 
+class square
+{
+    constructor(sides)
+    {
+        this.sides = sides;
+    }
 
+    perimeter()
+    {
+        var per = 0;
+        for (var i = 0; i <= this.sides.length; i++)
+        {
+            per += this.sides[i];
+        }
+        return per;
+    }
+}
 // TODO: write your code above this line
 
 // QUESTION 8
@@ -194,7 +201,8 @@ let grade=['A','B','C','D','E','F'];
 /**
  * Create an object for the above Class
  */
-
+const polygon = new square([10, 10, 10, 10]);
+console.log(Polygon.perimeter());
 // TODO: write your code below this line
 
 
@@ -278,5 +286,5 @@ console.log(fizzBuzz());
 // TODO: write your code above this line
 
 // The lines of code below will be used for testing your function. don't change them
-//console.log(baseBallPointer([5, 2,"C","D","+"]));
-//console.log(baseBallPointer([5, -2, 4, "C", "D", 9, "+", "+"]));
+console.log(baseBallPointer([5, 2,"C","D","+"]));
+console.log(baseBallPointer([5, -2, 4, "C", "D", 9, "+", "+"])) };
